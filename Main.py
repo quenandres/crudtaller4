@@ -64,7 +64,7 @@ eleccion = None
 
 while eleccion is not 5:
     print(menu)
-    eleccion = int(input("Elige: "))
+    eleccion = int(input("Seleccion: "))
     if eleccion is 1:
         print("Insertar")
         nombre = input("Nombre del producto: ")
@@ -76,14 +76,14 @@ while eleccion is not 5:
     elif eleccion is 2:
         print("Obteniendo productos...")
         for producto in obtener():
-            print("=================")
+            print("/"*30)
             print("Id: ", producto["_id"])
             print("Nombre: ", producto["nombre"])
             print("Valor: ", producto["valor"])
             print("Stock: ", producto["stock"])
     elif eleccion is 3:
         print("Actualizar")
-        id = input("Dime el id: ")
+        id = input("Cual es el id: ")
         nombre = input("Nuevo nombre del producto: ")
         valor = float(input("Nuevo valor del producto: "))
         stock = float(input("Nueva stock del producto: "))
@@ -93,6 +93,6 @@ while eleccion is not 5:
 
     elif eleccion is 4:
         print("Eliminar")
-        id = input("Dime el id: ")
+        id = input("Cual es el id: ")
         productos_eliminados = eliminar(id)
         print("Número de productos eliminados: ", productos_eliminados)
